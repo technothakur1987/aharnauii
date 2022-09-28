@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+import NavBar from './Components/NavBar';
+import AboutKLocal from './Components/AboutKLocal';
+import Blog from './Components/Blog';
+import PopularPlaces from './Components/PopularPlaces';
+import Explore from './Components/Explore';
+
+
+
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+  
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+    <Route path="/AboutKLocal" element={<AboutKLocal kl="this is aboutklocal section"/>}/>
+    <Route path="/Blog" element={<Blog bg="this is blog section"/>}/>
+    <Route path="/PopularPlaces" element={<PopularPlaces ps="this is popular places section" />}/>
+    <Route path="/Explore" element={<Explore />}/>
+      
+    </Routes>
+    
+    
+    </BrowserRouter>
+    
   );
 }
 
